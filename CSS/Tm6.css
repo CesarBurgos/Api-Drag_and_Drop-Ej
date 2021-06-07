@@ -8,7 +8,7 @@ table{
 }
 
 #table2{
-    width: 95%;
+    width: 75%;
 }
 
 img{
@@ -147,11 +147,6 @@ input[type=button] {
     
     border-radius: 20px / 10px;
     box-shadow: rgb(100,100,100) 0px 10px 10px;
-}
-
-.Celds{
-    width: 50% 
-    background-color: #FEFFD2;
 }
 
 .Icono{
