@@ -12,20 +12,25 @@
     <body background="Imagenes/Fondo3.jpg" ><center><br>
         <table>
             <tr>
-                <td align="center" height = "95">
-                    <img src="Imagenes/Bot2.png" width="210" height="70" id="btn2" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('MenuDrag')"/>
-                </td>
-                <td align="center" height = "95">
-                    <img src="Imagenes/Bot4.png" width="210" height="70" id="btn3" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('Metodos')"/>
-                </td>
-                <td align="center" height = "95">
-                    <img src="Imagenes/Bot3.png" width="210" height="70" id="btn4" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('Propiedades')"/>    
+                <td align="center" colspan="3">
+                    <table height = "95">
+                        <tr>
+                            <td align="center" >
+                                <img src="Imagenes/Bot2.png" width="210" height="70" id="btn2" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('MenuDrag')"/>
+                            </td>
+                            <td align="center">
+                                <img src="Imagenes/Bot4.png" width="210" height="70" id="btn3" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('Metodos')"/>
+                            </td>
+                            <td align="center">
+                                <img src="Imagenes/Bot3.png" width="210" height="70" id="btn4" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('Propiedades')"/>        
+                            </td>
+                        </tr>  
+                    </table>    
                 </td>
             </tr>
-        </table>        
-        <table>
+
             <tr>
-                <td colspan="2"><center>
+                <td colspan="1"><center>
                     <img src="Imagenes/Mano1.png" width="150" height="150" id="Img"/>
                 </center></td>
                 <td colspan="2">
@@ -33,7 +38,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="4">
+                <td colspan="3">
                     <p><b>Los eventos</b> son el medio como interactúa una clase con otras o con el propio usuario, se encargan de avisar que algo ha ocurrido y de manejarlo de una forma o de otra. 
                     <br><br>Cada vez que escribimos con nuestro teclado, que hacemos click en un botón o un link, que cambiamos el tamaño de un objeto, estamos generando eventos.
                     <br><br> Antes de trabajar con esta nueva herramienta, existe un aspecto importante que debemos considerar. Los navegadores realizan acciones por defecto durante una operación de arrastrar y soltar.  Para obtener el resultado que queremos, necesitamos prevenir en algunas ocasiones este comportamiento por defecto y personalizar las reacciones del navegador. Para algunos eventos, como dragenter, dragover y drop, la prevención es necesaria, incluso cuando una acción personalizada ya fue especificada.
@@ -41,42 +46,42 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2"><h1 class="subtitulo"> dragstart </h1></td>
+                <td colspan="1"><h1 class="subtitulo"> dragstart </h1></td>
                 <td colspan="2"><p> Este evento es activado por el elemento origen cuando la operación de arrastre comienza. <b>Es decir, al sujetar el elemento a arrastrar. </b></p></td>
             </tr>
             <tr>
-                <td colspan="2"><h1 class="subtitulo"> drag </h1></td>
+                <td colspan="1"><h1 class="subtitulo"> drag </h1></td>
                 <td colspan="2"><p> Este evento es activado por el elemento origen mientras una operación de arrastre se está realizando. <b>Es decir, al estar moviendo (o arrastrando) nuestro objeto. </b></p></td>
             </tr>
             <tr>
-                <td colspan="2"><h1 class="subtitulo"> dragend </h1></td>
+                <td colspan="1"><h1 class="subtitulo"> dragend </h1></td>
                 <td colspan="2"><p> Este evento es activado por el elemento origen cuando una operación de arrastre es terminada, ya sea porque la acción de soltar fue exitosa o porque la operación de arrastre fue cancelada. <b> Es decir, cuando al elemento es soltado del clic siendo colocado o no en el área deseada </b></p></td>
             </tr>
             <tr>
-                <td colspan="2"><h1 class="subtitulo"> dragenter </h1></td>
+                <td colspan="1"><h1 class="subtitulo"> dragenter </h1></td>
                 <td colspan="2"><p> * Este evento es activado por el elemento destino cuando el puntero del ratón entra en el área ocupada por este elemento. </p></td>
             </tr>
             <tr>
-                <td colspan="2"><h1 class="subtitulo"> dragover </h1></td>
+                <td colspan="1"><h1 class="subtitulo"> dragover </h1></td>
                 <td colspan="2"><p> * Este evento es activado periódicamente por el elemento destino cuando el puntero del ratón está sobre él. </p></td>
             </tr>
             <tr>
-                <td colspan="2"><h1 class="subtitulo"> drop </h1></td>
+                <td colspan="1"><h1 class="subtitulo"> drop </h1></td>
                 <td colspan="2"><p> * Este evento es activado por el elemento destino cuando el elemento origen es soltado en su interior. </p></td>
             </tr>
             <tr>
-                <td colspan="2"><h1 class="subtitulo"> dragleave </h1></td>
+                <td colspan="1"><h1 class="subtitulo"> dragleave </h1></td>
                 <td colspan="2"><p> Este evento es disparado por el elemento destino cuando el puntero del ratón sale del área ocupada por el mismo. </p></td>
             </tr>
             <tr>
-                <td colspan="4"><p><b> * Este evento siempre tiene que ser cancelado usando el método preventDefault().
+                <td colspan="3"><p><b> * Este evento siempre tiene que ser cancelado usando el método preventDefault().
                 <br><br>Los navegadores también realizan acciones por defecto cuando estos eventos son disparados (por ejemplo, abrir un enlace o actualizar la ventana para mostrar la imagen que fue soltada) por lo que debemos prevenir este comportamiento usando el método <b> preventDefault().</b></p></td>
             </tr>
         </table><hr><br>
         <table width = "90%">   
             <tr>
                 <td colspan="2"><p> Algunas aplicaciones de los eventos mencionados, son aplicados en los tutoriales preparados en esta página web, para consultarlos,<b> haga clic en el boton de la derecha </b></p></td>
-                <td colspan="2"><img src="Imagenes/Bot6.png" width="205" height="70" id="tutorial" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('Tutorial')"/> </td>
+                <td colspan="1"><img src="Imagenes/Bot6.png" width="205" height="70" id="tutorial" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('Tutorial')"/> </td>
             </tr>
         </table><br><br>
     </center></body>
