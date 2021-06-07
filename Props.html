@@ -12,20 +12,23 @@
     <body style="background-image: url(Imagenes/Fondo3.jpg);" ><center><br>
         <table>
             <tr>
-                <td align="center" height = "95">
-                    <img src="Imagenes/Bot2.png" width="210" height="70" id="btn2" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('MenuDrag')"/>
-                </td>
-                <td align="center" height = "95">
-                    <img src="Imagenes/Bot5.png" width="210" height="70" id="btn3" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('Eventos')"/>
-                </td>
-                <td align="center" height = "95">
-                    <img src="Imagenes/Bot4.png" width="210" height="70" id="btn4" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('Metodos')"/>    
+              <td align="center" colspan="3">
+                    <table height = "95">  
+                        <td align="center" height = "95">
+                            <img src="Imagenes/Bot2.png" width="210" height="70" id="btn2" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('MenuDrag')"/>
+                        </td>
+                        <td align="center" height = "95">
+                            <img src="Imagenes/Bot5.png" width="210" height="70" id="btn3" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('Eventos')"/>
+                        </td>
+                        <td align="center" height = "95">
+                            <img src="Imagenes/Bot4.png" width="210" height="70" id="btn4" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('Metodos')"/>    
+                        </td>
+                    </table>
                 </td>
             </tr>
-        </table>        
-        <table>
+        
             <tr>
-                <td colspan="2"><center>
+                <td colspan="1"><center>
                     <img src="Imagenes/Propiedades0.png" width="350" height="250" id="Img"/>
                 </center></td>
                 <td colspan="2">
@@ -33,7 +36,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="4">
+                <td colspan="3">
                     <p><b>Las propiedades</b> son las caracterísiticas individuales que diferencian un objeto de otro y determinan su apariencia, estado u otras cualidades. Estas se guardan en variables denominadas de instancia, y cada objeto particular puede tener valores distintos para estas variables.
                     Las variables de instancia también denominados miembros dato, son declaradas en la clase pero sus valores son fijados y cambiados en el objeto.
                     Además de las variables de instancia hay variables de clase, las cuales se aplican a la clase y a todas sus instancias. 
@@ -42,28 +45,38 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2"><h1 class="subtitulo"> types </h1></td>
+                <td colspan="1"><h1 class="subtitulo"> types </h1></td>
                 <td colspan="2"><p> Esta propiedad retorna un array con todos los tipos establecidos durante el evento  <b> dragstart. </b></p></td>
             </tr>
             <tr>
-                <td colspan="2"><h1 class="subtitulo"> files </h1></td>
+                <td colspan="1"><h1 class="subtitulo"> files </h1></td>
                 <td colspan="2"><p> Esta propiedad retorna un array con información acerca de los archivos que están siendo arrastrados.</p></td>
             </tr>
             <tr>
-                <td colspan="2"><h1 class="subtitulo"> dropEffect </h1></td>
+                <td colspan="1"><h1 class="subtitulo"> dropEffect </h1></td>
                 <td colspan="2"><p> Esta propiedad retorna el tipo de operación actualmente seleccionada. Los valores posibles son: <b> none, copy, link y move.  </b></p></td>
             </tr>
             <tr>
-                <td colspan="2"><h1 class="subtitulo"> effectAllowed </h1></td>
+                <td colspan="1"><h1 class="subtitulo"> effectAllowed </h1></td>
                 <td colspan="2"><p> Esta propiedad retorna los tipos de operación que están permitidos. Puede ser declarada para cambiar las operaciones permitidas. Los posibles valores son: <b>none, copy, copyLink, copyMove, link, linkMove, move, all y uninitialized. </b></p></td>
             </tr>
-        </table><hr><br>
-        <table width = "90%">   
+        
             <tr>
-                <td colspan="2"><p> La aplicación de algunas de estas propiedades descritas son mencionadas en los tutoriales preparados en esta página web, para consultarlos,<b> haga clic en el boton de la derecha </b></p></td>
-                <td colspan="2"><img src="Imagenes/Bot6.png" width="205" height="70" id="tutorial" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('Tutorial')"/> </td>
+                <td colspan="3">
+                    <hr><br>
+                    <table>   
+                        <tr>
+                            <td colspan="2">
+                                <p> La aplicación de algunas de estas propiedades descritas son mencionadas en los tutoriales preparados en esta página web, para consultarlos,<b> haga clic en el boton de la derecha </b></p>
+                            </td>
+                            <td colspan="1">
+                                <img src="Imagenes/Bot6.png" width="205" height="70" id="tutorial" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('Tutorial')"/>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
             </tr>
-        </table><br><br>
-    </center></body>
+        </table>
+        <br><br></center>
+    </body>
 </html>
-
