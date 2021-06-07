@@ -12,7 +12,7 @@ function Deselec(elemento){
 
 function Direccionamiento(idelemento){
     if(idelemento === 'MenuDrag'){
-        location='Index.html';
+        location='index.html';
     }
     
     if(idelemento === 'Eventos'){
