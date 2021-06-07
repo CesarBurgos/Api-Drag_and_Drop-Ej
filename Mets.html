@@ -12,20 +12,25 @@
     <body style="background-image: url(Imagenes/Fondo3.jpg)"><center><br>
         <table>
             <tr>
-                <td align="center" height = "95">
-                    <img src="Imagenes/Bot2.png" width="210" height="70" id="btn2" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('MenuDrag')"/>
-                </td>
-                <td align="center" height = "95">
-                    <img src="Imagenes/Bot5.png" width="210" height="70" id="btn3" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('Eventos')"/>
-                </td>
-                <td align="center" height = "95">
-                    <img src="Imagenes/Bot3.png" width="210" height="70" id="btn4" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('Propiedades')"/>    
+                <td align="center" colspan="3">
+                    <table height = "95">
+                        <tr>
+                            <td align="center">
+                                <img src="Imagenes/Bot2.png" width="210" height="70" id="btn2" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('MenuDrag')"/>
+                            </td>
+                            <td align="center">
+                                <img src="Imagenes/Bot5.png" width="210" height="70" id="btn3" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('Eventos')"/>
+                            </td>
+                            <td align="center">
+                                <img src="Imagenes/Bot3.png" width="210" height="70" id="btn4" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('Propiedades')"/>    
+                            </td>
+                        </tr>
+                   </table>
                 </td>
             </tr>
-        </table>
-        <table>
+            
             <tr>
-                <td colspan="2"><center>
+                <td colspan="1"><center>
                     <img src="Imagenes/Engrane0.png" width="150" height="150" id="Img"/>
                 </center></td>
                 <td colspan="2">
@@ -33,7 +38,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="4">
+                <td colspan="3">
                     <p><b>Un método</b> es una función que en su interior tiene definido un conjunto de instrucciones.
                     Tiene un nombre para identificarlo. Puede requerir datos de entrada de distinto tipo para ejecutarse o no.
                     Y podemos hacer que el método devuelva como resultado un dato. Cuando necesitamos ejecutar las instrucciones que contiene el método, lo hacemos simplemente utilizando su nombre
@@ -41,27 +46,37 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2"><h1 class="subtitulo">setData(tipo, dato) </h1></td>
+                <td colspan="1"><h1 class="subtitulo">setData(tipo, dato) </h1></td>
                 <td colspan="2"><p>Este método es usado para preparar los datos a ser enviados cuando el <b> evento dragstart </b>es disparado. El atributo "tipo" puede ser cualquier tipo de datos regular (como text/plain o text/html) o un tipo de dato personalizado. </p></td>
             </tr>
             <tr>
-                <td colspan="2"><h1 class="subtitulo">getData(tipo)</h1></td>
+                <td colspan="1"><h1 class="subtitulo">getData(tipo)</h1></td>
                 <td colspan="2"><p>Este método retorna los datos del tipo especificado. Es usado cuando un <b>evento drop </b>es disparado. </p></td>
             </tr>
             <tr>
-                <td colspan="2"><h1 class="subtitulo">clearData(type)</h1></td>
+                <td colspan="1"><h1 class="subtitulo">clearData(type)</h1></td>
                 <td colspan="2"><p>Este método remueve los datos del tipo especificado.</p></td>
             </tr>
             <tr>
-                <td colspan="2"><h1 class="subtitulo">setDragImage(elemento, x, y)</h1></td>
+                <td colspan="1"><h1 class="subtitulo">setDragImage(elemento, x, y)</h1></td>
                 <td colspan="2"><p>Este método reemplaza la imagen en miniatura creada por el navegador en la operación arrastrar y soltar por una imagen personalizada. También declara la posición que esta imagen tendrá con respecto al puntero del ratón. </p></td>
             </tr>
-        </table><hr><br>
-        <table>   
             <tr>
-                <td colspan="2"><p> Algunas aplicaciones de los métodos mencionados, pueden ser encontrados en el apartado de tutoriales, para ello,<b> haga clic en el boton de la derecha </b></p></td>
-                <td colspan="2"><img src="Imagenes/Bot6.png" width="205" height="70" id="tutorial" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('Tutorial')"/> </td>
+                <td colspan="3">
+                    <hr><br>
+                    <table>   
+                        <tr>
+                            <td colspan="2">
+                                <p> Algunas aplicaciones de los eventos mencionados, son aplicados en los tutoriales preparados en esta página web, para consultarlos,<b> haga clic en el boton de la derecha </b></p>
+                            </td>
+                            <td colspan="1">
+                                <img src="Imagenes/Bot6.png" width="205" height="70" id="tutorial" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="Direccionamiento('Tutorial')"/>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
             </tr>
-        </table><br><br>
-    </center></body>
+        </table>
+        <br><br></center>
+    </body>
 </html>
