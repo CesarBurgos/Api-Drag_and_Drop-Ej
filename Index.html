@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> API - Drag and Drop </title>
+        <link rel="icon" type="image/png" href="Imagenes/Mano2.png" />
+        <link rel="stylesheet" href="CSS/Tm6.css">
+        <script type="text/javascript" src="JS/T6-0.js"></script>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style="background-image: url(Imagenes/Fondo4.jpg);" ><center><br>
+        <table>
+            <tr>
+                <td colspan="3" id="titulotd">
+                    <h1 id="titulo" style="background-color: #E6E6E6"> Ejemplo de Api: Drag and Drop (Arrastra y suelta) </h1>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h1 class="subtituloh1 texto" style="background-color: #F3EFFF;">Arrastrar un elemento desde un lugar y luego soltarlo en otro es algo que hacemos todo el tiempo en aplicaciones de escritorio, actividad que gracias esta API es posible hacerlo en la web. </h1>
+                    <h1 class="subtituloh1 texto" > Pero antes de todo... ¿Qué es una <b>API</b>? <br><br> Una API (siglas de ‘Application Programming Interface’) permite hacer uso de funciones ya existentes en otro software (o de la infraestructura ya existente en otras plataformas), reutilizando así código que se sabe que está probado, funcionando correctamente. </h1>                     
+                    <table id="table2">
+                        <tr>
+                            <td>
+                                <h1 class="subtituloh1 texto" style="background-color: #D2FBBA"> La <b>API Drag and Drop</b>, fue introducida por la especificación HTML5, brindando a los programadores de páginas web, desarrollar un efecto que permita al usuario hacer clic y mantener presionado el botón del ratón/mouse sobre un elemento, arrastrarlo a otra ubicación y soltarlo para colocar el elemento allí.  </h1>
+                            </td>
+                            <td><center>
+                                <img src="Imagenes/Drag0.png" width="200" height="70" id="ImgDrag"/>
+                            </center></td>
+                        </tr>
+                    </table> 
+                    <h1 class="subtituloh1 texto" style="background-color: #D2FBBA">El puntero lo seguirá como una representación transparente de lo que se está arrastrando durante la operación. Mientras que la ubicación de destino puede ser una aplicación diferente, esto dependiendo del uso que deseamos aplicar dicha API. </h1>
+                </td>
+                
+                <td colspan="1"><center>
+                    <table>
+                        <tr>
+                            <td><p class="mensj"> Si desea conocer algunas aplicaciones de la API <b>Drag&Drop</b>, consulte los tutoriales, haciendo clic en el botón de abajo: <p></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="Imagenes/Bot6.png" width="260" height="90" id="mensaje" onclick="Redireccion('Tutorial')"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><p class="mensj"> Consulte la teoría que involucra la API, haciendo clic en alguno de los botones de abajo: <p></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="button" id="op1" value="Eventos" onclick="Redireccion('Eventos')" onmouseover="SelecOpc1()" onmouseout="DeselecOpc1()"/></td>
+                            <td><center><img src="Imagenes/Mano1.png" width="60" height="70" id="ImgE" style="visibility: hidden"/></center></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="button" id="op2" value="Métodos" onclick="Redireccion('Metodos')" onmouseover="SelecOpc2()" onmouseout="DeselecOpc2()"/></td>
+                            <td><center><img src="Imagenes/Engrane0.png" width="60" height="60" id="ImgF" style="visibility: hidden"/></center></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="button" id="op3" value="Propiedades" onclick="Redireccion('Propiedades')" onmouseover="SelecOpc3()" onmouseout="DeselecOpc3()"/></td>
+                            <td><center><img src="Imagenes/Propiedades0.png" width="65" height="50" id="ImgP" style="visibility: hidden"/></center></td>
+                        </tr>
+                    </table>
+                </center></td>               
+            </tr>
+            
+        </table>
+    </center></body>
+</html>

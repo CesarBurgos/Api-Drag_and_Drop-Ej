@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Tutorial 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../CSS/Tm6_Tut.css">
+        <link rel="stylesheet" href="../CSS/Tuts.css">
+        <script type="text/javascript" src="../JS/T6t1.js"></script>
+    </head>
+    <body><center><br>
+        <table>
+            <!-- ***** TUTORIAL_1 ***** -->
+            <tr><td class="center" colspan="2"><img src="../Imagenes/Tuto1.png" width="600" height="110"/></td></tr>
+            <tr>
+                <td class="center" colspan="2">
+                    <p class="subtitulo4"><b> Breve Descripción: </b><br> Esta será la aplicación más sencilla de la API. Consiste en hacer clic sobre una IMAGEN (Objeto), presionando aún dicha imagen, la arrastramos hacia alguna área especifica, en este caso, nuestra ÁREA DESTINO.</p>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td colspan="1"><p class="subtitulo2 center"><b> Resultado a obtener en este tutorial: </b></p></td>    
+                <td colspan="1"><center><button class="Boton Opciones" onclick="Reset()"> Reiniciar Tutorial 1 </button></center></td>
+            </tr>
+            
+            <tr>
+                <td colspan="1"><center>
+                    <section id="Objetos">
+                        <p class="TextTut2" id="text2"> Haga Clic en su objeto y arrastrelo hacia su Destino: </p>
+                        <img id="imagen" class="Opciones" src="../Imagenes/Fig1.png" width="150" height="120"/>
+                    </section>
+                </center></td>
+                <td colspan="1"><center>
+                    <section id="Destino">
+                        <p class="TextTut1" id="text1">
+                        <b>- Área Destino -</b><br><br>Dentro de este recuadro. 
+                        Coloque el elemento a arrastrar.</p>
+                    </section>
+                </center></td>
+            </tr>
+        </table>
+        <br><b> Para saber cómo realizarlo, continua deslizando hacia abajo. </b><hr><br><br>
+        <table> 
+            <tr>
+                <td colspan="2"><p class="subtitulo4"><b> -- Instrucciones --  </b></p></td>
+            </tr>
+            <tr>
+                <td colspan="2"><p class="subtitulo2">
+                    <b>1° Paso </b><br>Debemos crear las áreas con las cuales trabajaremos, en este caso son necesarias 2, el ÁREA DESTINO y el ÁREA DE OBJETOS, la elaboración de cada una de ellas se llevaba a cabo con las líneas de códigos mostradas a continuación:
+                </p></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><p class="subtitulo3"><b> Área Destino: </b> Es el espacio o lugar en cuál será(n) colocado(s) nuestro(s) elemento(s) arrastrados. <br>* Con el uso adecuado el lenguaje etiquetado HTML5 creamos dicha área y junto con las hojas de estilos CSS es que damos un mejor diseños a nuestra área.</p></td>
+            </tr>      
+            
+            <tr>
+                <td class="HTML"><pre><code>        &lt;!-- ***** Código HTML5 (Estructura) ***** -->
+
+        &lt;section id="Destino">
+            &lt;p class="TextTut1" id="text1">
+            &lt;b> *** Área Destino *** &lt;/b>&lt;/p>
+        &lt;/section></code></pre>
+                </td>
+                
+            <td  class="CSS"><pre><code>            /* ***** Código CSS (Estilos) ***** */
+
+            #Destino{
+                text-align:center;
+                width: 500px;
+                height: 240px;
+                margin: 10px;
+                background: rgba(157, 161, 255 ,.2);
+                border-color: #0007A5;
+                border-style: inset;
+                border-width: 11px;
+            }</code></pre></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2">
+                    <p class="subtitulo3">
+                        <b> Área De Objetos: </b> Apartado en el cual se encontrarán nuestro(s) elemento(s) que serán arrastrados (Este apartado PUEDE o NO Existir). <br>* Con el uso adecuado el lenguaje etiquetado HTML5 creamos dicha área y junto con las hojas de estilos CSS es que damos un mejor diseños a nuestra área.
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>    
+                <td class="HTML">
+            <pre><code>
+&lt;!-- ***** Código HTML5 (Estructura) ***** -->
+
+&lt;section id="Objetos">
+    &lt;p class="TextTut2" id="text2"> 
+        Arrastrelo hacia su Destino: 
+    &lt;/p>
+    &lt;img id="imagen" src="Dirección_De_Una_Imagen">
+&lt;/section></code></pre>
+                </td>
+                <td  class="CSS"><pre><code>            /* ***** Código CSS (Estilos) ***** */
+
+            #Objetos{
+                text-align:center;
+                width: 500px;
+                height: 240px;
+                margin: 10px;
+                background: rgba(255, 165, 61 ,.2);
+                border-color: #FFA53D;
+                border-style: inset;
+                border-width: 11px;
+            }</code></pre>
+                </td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><p class="subtitulo2">
+                    <b>2° Paso </b><br> Contando con nuestras áreas elaboradas, corresponde el dar acción los <b>Eventos</b> que serán activados para llevar a cabo la aplicación de la API. Para ello, hacemos uso del lenguaje JavaScript, declarando FUNCIONES, podemos controlar los procesos que lleva el arrastre. El código ha implementar es el siguiente:
+                </p></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><p class="subtitulo3"><b> Descripción breve acerca de las funciones: </b> <br><br>
+                <b> iniciar: </b> Agrega las escuchas "Listener" para los eventos necesarios en esta operación
+                <br><br>
+                <b> arrastrando: </b> Obtenemos el valor del atributo src del elemento que está siendo arrastrado y declaramos los datos que serán transferidos usando el <b>Método</b> setData() del objeto dataTransfer
+                <br><br>
+                <b> soltando: </b> Cuando un elemento es soltado dentro del elemento destino, el <b>Evento</b> drop es disparado y la función soltado() es llamada. Recibirá y procesará los datos enviados por el elemento origen
+                <br><br>
+                Las funciones <b>entrando()</b> y <b>saliendo()</b> cambiarán el color de fondo del elemento destino cada vez que el puntero del ratón esté arrastrando un objeto y entre o salga del área ocupada por este elemento (estas acciones disparan los <b>Eventos</b> dragenter y dragleave). Además, la función <b>finalizado()</b> será llamada por la escucha del <b>Evento</b> dragend cuando el objeto arrastrado es soltado.
+                <br><br>
+                <b> window.addEventListener('load', iniciar, false): </b> Es un componente que representa a la ventana, capturaria los eventos que ocurran en dicha ventana.
+                </p></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2" class="JS">
+                    <pre><code>         // ***** Código en JavaScript *****
+
+            var correcto=false;
+            function iniciar(){
+                origen1=document.getElementById('imagen');
+                origen1.addEventListener('dragstart', arrastrado, false);
+                origen1.addEventListener('dragend', finalizado, false);
+
+                soltar=document.getElementById('Destino');
+                soltar.addEventListener('dragenter', entrando, false);
+                soltar.addEventListener('dragleave', saliendo, false);
+                soltar.addEventListener('dragover', function(e){ e.preventDefault(); }, false);
+                soltar.addEventListener('drop', soltado, false);
+
+                Objeto=document.getElementById('Objetos');
+            }
+
+            function entrando(e){
+                e.preventDefault();
+                soltar.style.background='rgba(0,150,0,.2)';
+            }
+
+            function saliendo(e){
+                e.preventDefault();
+                soltar.style.background='rgba(157, 161, 255,.2)';
+            }
+
+            function finalizado(e){
+                elemento=e.target;
+                if(correcto){
+                     soltar.style.background='rgba(0,150,0,.2)';
+                    document.getElementById('text2').innerHTML =
+                    " &lt;br> Vaya ... &lt;br>&lt;br>¡¡ El Objeto ha sido colocado CORRECTAMENTE!! ";
+                    elemento.style.visibility='hidden';
+                }else{
+                    soltar.style.background='rgba(150,0,0,.2)';
+                    soltar.innerHTML="&lt;p class=\"TextTut1\" id=\"text1\">&lt;b> Error :( &lt;/b>&lt;/p>";
+                    document.getElementById('text2').innerHTML = 
+                    " &lt;br> Vaya ... &lt;br>&lt;br>¡¡ El Objeto ha sido colocado INCORRECTAMENTE!! ";
+                    elemento.style.visibility='hidden';
+                }
+            }
+
+            function arrastrado(e){
+                var codigo='&lt;img src="'+origen1.getAttribute('src')+'">';
+                e.dataTransfer.setData('Elemento', codigo);
+
+                document.getElementById('text1').style.fontWeight = "bold";
+                document.getElementById('text1').innerHTML='¡¡Coloca tu elemento aquí!!';
+            } 
+
+            function soltado(e){
+                e.preventDefault();
+                soltar.innerHTML=e.dataTransfer.getData('Elemento');
+                correcto=true;
+            }</code></pre>
+                </td>
+            </tr>
+        </table><br><hr><br>
+    </center></body>
+</html>

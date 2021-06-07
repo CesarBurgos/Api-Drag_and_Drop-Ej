@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> API Drag and Drop / Tutoriales </title>
+        <link rel="icon" type="image/png" href="Imagenes/Bot6.png"/>
+        <link rel="stylesheet" href="CSS/Tm6_Tut.css">
+        <script type="text/javascript" src="JS/T6-Tut.js"></script>
+      
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body background="Imagenes/Fondo4.jpg"><center><br><br>
+        <table>
+            <tr>
+                <td class="center">
+                    <img class="Opciones" src="Imagenes/Bot2.png" width="210" height="70" id="btn2" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="direccion('MenuDrag')"/>
+                </td>
+                <td class="center">
+                    <img class="Opciones" src="Imagenes/Bot5.png" width="210" height="70" id="btn3" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="direccion('Eventos')"/>    
+                </td>
+                <td class="center">
+                    <img class="Opciones" src="Imagenes/Bot4.png" width="210" height="70" id="btn4" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="direccion('Metodos')"/>
+                </td>
+                <td class="center">
+                    <img class="Opciones" src="Imagenes/Bot3.png" width="210" height="70" id="btn5" onmouseover="Selec(this)" onmouseout="Deselec(this)" onclick="direccion('Propiedades')"/>
+                </td>
+            </tr>
+        </table><br>
+        
+        <table>
+            <tr>
+                <td class="center" colspan="2">
+                    <img src="Imagenes/Bot6.png" width="480" height="160"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="center">
+                    <img src="Imagenes/Tut1.png" width="350" height="200"/>
+                </td>
+                <td><p class="subtitulo">
+                    <b> Drag and Drop </b>
+                    incorpora la posibilidad de arrastrar y soltar elementos en la pantalla como lo haríamos comúnmente en aplicaciones de escritorio. Ahora, con unas pocas líneas de código, podemos hacer que un elemento esté disponible para ser arrastrado y soltado dentro de otro elemento en la pantalla. Estos elementos pueden incluir no solo gráficos sino además textos, enlaces, archivos o datos en general.
+                    <br><br> Dentro de esta página podrá consultar 4 simples y sencillos ejemplos acerca de la <b>API "Drag and Drop (Arrastra y suelta)"</b>.
+                </p></td>
+            </tr>
+            
+            <tr>
+                <td class="center" colspan="2">
+                    <p class="subtitulo">
+                    <b> Nota Importante: </b>Para comprender a detalle el funcionamiento de la API como también los siguientes ejemplos (tutoriales), debe leer la teoría que abarca dicha API, para ello fueron incorporadas páginas cuyo nombres son 
+                    <a href="Events.html" id="Enlace1">Eventos</a>, <a href="Mets.html" id="Enlace2">Métodos</a> y <a href="Props.html" id="Enlace3">Propiedades</a>. Para consultar la información debe dirígirse a la parte superior o bien, hacer clic en las palabras de color AZUL.</p>
+                </td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><center>
+                    <button id="b1" onmouseover="Sel1(this)" onmouseout="Des2(this)" class="Boton3 Opciones" onclick="direccion('Eventos')"> Eventos </button>
+                    <button id="b2" onmouseover="Sel1(this)" onmouseout="Des2(this)" class="Boton3 Opciones" onclick="direccion('Metodos')"> Métodos </button>
+                    <button id="b3" onmouseover="Sel1(this)" onmouseout="Des2(this)" class="Boton3 Opciones" onclick="direccion('Propiedades')"> Propiedades </button>
+                </center></td>
+            </tr>
+            <tr>
+                <td colspan="2"><center>
+                    <button id="b1" onmouseover="Sel1(this)" onmouseout="Des1(this)" class="Boton2 Opciones" onclick="opcTut(1)"> Tutorial 1 </button>
+                    <button id="b2" onmouseover="Sel1(this)" onmouseout="Des1(this)" class="Boton2 Opciones" onclick="opcTut(2)"> Tutorial 2 </button>
+                    <button id="b3" onmouseover="Sel1(this)" onmouseout="Des1(this)" class="Boton2 Opciones" onclick="opcTut(3)"> Tutorial 3 </button>
+                    <button id="b4" onmouseover="Sel1(this)" onmouseout="Des1(this)" class="Boton2 Opciones" onclick="opcTut(4)"> Tutorial 4 </button>                    
+                </center></td>
+            </tr>
+            
+        </table>
+        
+        <iframe id="Ejemplos" src="Tutoriales/Tut1.html" scrolling="auto">
+            No puede ser mostrado el contenido de este iframe en el navegador actual. Intentelo con uno diferente.
+        </iframe><br><br>
+    </center></body>
+</html>

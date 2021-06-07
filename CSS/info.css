@@ -1,0 +1,55 @@
+/*  Created on : 14/03/2020, 08:34:44 PM
+    Author     : Cesar*/
+
+table{
+    width: 70%;
+}
+td{
+    height: 70px;
+}
+img{
+    cursor: pointer;
+}
+
+p{
+    text-align: center;
+    font-family: Arial Nova Light;
+    font-size: 22px;
+    text-align:center;
+    color:#000;
+}
+
+.Titulo{
+    font-weight:bold;
+    border-radius: 12px;
+    border-bottom: 3px solid;
+    color: black;
+    background-color: #DCBCF9;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 190px;
+  background-color: white;
+  color: black;
+  font-weight:bold;
+  text-align: center;
+  border-radius: 3px;
+  padding: 5px 0;
+  
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}

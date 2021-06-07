@@ -1,0 +1,179 @@
+.HTML{
+    font-size: 19px;
+    font-weight:bold;
+    color:#000000;
+    background: rgba(255, 116, 7 ,.3);
+    margin: 20px;
+    padding: 20px;
+    border-color: #B14E00;
+    border-style: double;
+    border-width: 10px;
+}
+
+.CSS{
+    font-size: 19px;
+    font-weight:bold;
+    color:#000000;
+    background: rgba(178, 203, 255 ,.3);
+    margin: 20px;
+    padding: 20px;
+    border-color: #336FEB;
+    border-style: double;
+    border-width: 10px;
+}
+
+.JS{
+    font-size: 19px;
+    font-weight:bold;
+    color:#000000;
+    background: rgba(255, 232, 0  ,.3);
+    margin: 20px;
+    padding: 20px;
+    border-color: #FFE800;
+    border-style: double;
+    border-width: 10px;
+}
+
+.TextTut1{
+    font-family: Arial Nova Light;
+    font-size: 25px;
+    text-align:center;
+    margin: 2px;
+    color:#000000;
+}
+
+.TextTut2{
+    font-family: Arial Nova Light;
+    font-weight:bold;
+    font-size: 20px;
+    text-align: justify;
+    margin: 1px;
+    color: #000000;
+}
+
+.secciones{
+    justify-content: center;
+}
+
+.Boton{
+    font-family: 'Arial';
+    font-weight:bold;
+    font-size: 20px;
+    text-align:justify;
+    color:#000;
+    
+    height: 80%;    
+    background: rgba(136, 254, 110  ,.3);
+    padding: 10px;
+    margin: 20px 10px;
+    border-color: #00CD38;
+    border-style: ridge;
+    border-width: 10px;
+    border-radius: 20px / 10px; 
+    box-shadow: rgb(100,100,100) 0px 10px 10px; 
+}
+
+/* ***************************************************************************   Estilos utilizados en el Tutorial 1*/
+#Destino{
+    justify-content: center;
+    width: 500px;
+    height: 240px;
+    margin: 10px;
+    background: rgba(157, 161, 255 ,.2);
+    border-color: #0007A5;
+    border-style: inset;
+    border-width: 11px;
+}
+
+#Objetos{
+    justify-content: center;
+    width: 500px;
+    height: 240px;
+    margin: 10px;
+    background: rgba(255, 165, 61 ,.2);
+    border-color: #FFA53D;
+    border-style: inset;
+    border-width: 11px;
+}
+
+/* ***************************************************************************   Estilos utilizados en el Tutorial 2*/
+#Destino2{
+    justify-content: center;
+    width: 700px;
+    height: 240px;
+    margin: 10px;
+    background: rgba(157, 161, 255 ,.2);
+    border-color: #0007A5;
+    border-style: inset;
+    border-width: 11px;
+}
+
+#Objetos2{
+    justify-content: center;
+    width: 700px;
+    height: 240px;
+    margin: 10px;
+    background: rgba(255, 165, 61 ,.2);
+    border-color: #FFA53D;
+    border-style: inset;
+    border-width: 11px;
+}
+
+#adver{
+    font-family: 'Arial';
+    font-size: 22px;
+    text-align:center;
+    color:#000;
+
+    height: 90%;
+    background: #FFF4DC;
+    padding: 5px 20px;
+    margin: 15px auto;
+}
+
+/* ***************************************************************************   Estilos utilizados en el Tutorial 3*/
+#Destino3{
+    width: 880px;
+    height: 600px;
+    border-color: #0007A5;
+    border-style: inset;
+    border-width: 11px;
+}
+
+#Objetos3{
+    justify-content: center;
+    width: 280px;
+    height: 610px;
+    margin: 10px;
+    background: rgba(255, 165, 61 ,.2);
+    border-color: #FFA53D;
+    border-style: inset;
+    border-width: 11px;
+}
+
+#lienzo{
+    background: rgba(255, 243, 0  ,.2);
+}
+
+/* ***************************************************************************   Estilos utilizados en el Tutorial 4*/
+#Destino4{
+    width: 1200px;
+    height: 280px;
+    border-color: #0007A5;
+    border-style: inset;
+    border-width: 11px;
+}
+
+.Arch{
+    font-family: Arial Nova Light;
+    font-size: 35px;
+    text-align: left;
+    margin: 2px;
+    color:#000000;
+}
+
+#Info{
+    overflow-y:scroll;
+    overflow-x:hidden;
+    height: 280px;
+}

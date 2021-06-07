@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Tutorial 3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../CSS/Tm6_Tut.css">
+        <link rel="stylesheet" href="../CSS/Tuts.css">
+        <script type="text/javascript" src="../JS/T6t3.js"></script>
+    </head>
+    <body><center><br>
+         <table>
+            <!-- ***** TUTORIAL_3 ***** -->
+            <tr><td class="center" colspan="2"><img src="../Imagenes/Tuto3.png" width="600" height="110"/></td></tr>            
+            <tr>
+                <td class="center" colspan="2">
+                    <p class="subtitulo4"><b> Breve Descripción: </b><br> Dentro de este ejemplo (tutorial), será implementado el pegado de IMAGENES que se encuentran dentro de nuestra ÁREA DE OBJETOS, es decir, toda imagen arrastrada dentro de nuestra ÁREA DESTINO, quedará colocada exactemente donde es soltada, respetando las corredenadas X y Y de dicha área.</p>
+                </td>
+            </tr>
+        </table>
+        
+        <table>
+            <tr>
+                <td colspan="1"><p class="subtitulo2 center"><b> Resultado a obtener en este tutorial: </b></p></td>
+                <td colspan="1"><center><button class="Boton Opciones" onclick="Reset()"> Reiniciar Tutorial 3 </button></center></td>
+            </tr>            
+            <tr>
+                <td colspan="1"><center>
+                    <p class="TextTut2" id="text2"> Arrastre las imagenes hacia su Destino: </p>
+                    <section id="Objetos3"><br>  
+                        <img id="imagen1" class="Opciones" src="../Imagenes/Fig1.png" width="150" height="140"/>
+                        <img id="imagen2" class="Opciones" src="../Imagenes/Fig2.png" width="150" height="140"/>
+                        <img id="imagen3" class="Opciones" src="../Imagenes/Fig3.png" width="150" height="140"/>
+                        <img id="imagen4" class="Opciones" src="../Imagenes/Fig4.png" width="130" height="140"/>
+                    </section>
+                </center></td>
+                
+                <td colspan="1"><center>
+                    <p class="TextTut1" id="text1"><b> Área Destino:</b> Coloque las imagenes aquí</p>
+                    <b id='Coord'> ... </b>
+                    <section id="Destino3">
+                        <canvas id="lienzo"  width = "880" height="600"></canvas>
+                    </section>
+                </center></td>
+            </tr>   
+        </table>
+        <br><b> Para saber cómo realizarlo, continua deslizando hacia abajo. </b><hr><br><br>
+        <table>
+            <tr>
+                <td colspan="2"><p class="subtitulo4"><b> -- Instrucciones --  </b></p></td>
+            </tr>
+            <tr>
+                <td colspan="2"><p class="subtitulo2">
+                    <b>1° Paso </b><br>Debemos crear las áreas con las cuales trabajaremos, en este caso son necesarias 2, el ÁREA DESTINO y el ÁREA DE OBJETOS, la elaboración de cada una de ellas se llevaba a cabo con las líneas de códigos mostradas a continuación:
+                </p></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><p class="subtitulo3"><b> Área Destino: </b> Es el espacio o lugar en cuál será(n) colocado(s) nuestro(s) elemento(s) arrastrados. <br>* Con el uso adecuado el lenguaje etiquetado HTML5 creamos dicha área y junto con las hojas de estilos CSS es que damos un mejor diseños a nuestra área.</p></td>
+            </tr>      
+            
+            <tr>
+                <td class="HTML"><pre><code>        &lt;!-- ***** Código HTML5 (Estructura) ***** -->
+
+        &lt;b> Área Destino: Coloque las imagenes aquí &lt;/b>
+        &lt;b id='Coord'> ... &lt;/b>
+
+        &lt;section id="Destino3">
+            &lt;canvas id="lienzo" width = "880" height = "600">&lt;/canvas>
+        &lt;/section></code></pre></td>
+                
+            <td  class="CSS"><pre><code>    /* ***** Código CSS (Estilos) ***** */
+
+    #Destino3{
+        width: 880px;
+        height: 600px;
+        border-color: #0007A5;
+        border-style: inset;
+        border-width: 11px;
+    }</code></pre></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><p class="subtitulo3"><b> Área De Objetos: </b> Apartado en el cual se encontrarán nuestro(s) elemento(s) que serán arrastrados (Este apartado PUEDE o NO Existir). <br>* Con el uso adecuado el lenguaje etiquetado HTML5 creamos dicha área y junto con las hojas de estilos CSS es que damos un mejor diseños a nuestra área.</p></td>
+            </tr>
+            
+            <tr>    
+                <td class="HTML">
+            <pre><code>&lt;!-- ***** Código HTML5 (Estructura) ***** -->
+
+&lt;b> Arrastre las imagenes hacia su Destino: &lt;/b>
+
+&lt;section id="Objetos3">
+    &lt;img id="imagen1" src="Dirección_1°_Imagen" width="150" height="140"/>
+    &lt;img id="imagen2" src="Dirección_2°_Imagen" width="150" height="140"/>
+    &lt;img id="imagen3" src="Dirección_3°_Imagen" width="150" height="140"/>
+    &lt;img id="imagen4" src="Dirección_4°_Imagen" width="130" height="140"/>
+&lt;/section></code></pre>
+                </td>
+            <td  class="CSS"><pre><code>     /* ***** Código CSS (Estilos) ***** */
+
+    #Objetos3{
+        justify-content: center;
+        width: 280px;
+        height: 610px;
+        margin: 10px;
+        background: rgba(255, 165, 61 ,.2);
+        border-color: #FFA53D;
+        border-style: inset;
+        border-width: 11px;
+    }</code></pre>
+                </td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><p class="subtitulo2">
+                    <b>2° Paso </b><br> Contando con nuestras áreas elaboradas, corresponde el dar acción los <b>Eventos</b> que serán activados para llevar a cabo la aplicación de la API. Para ello, hacemos uso del lenguaje JavaScript, declarando FUNCIONES, podemos controlar los procesos que lleva el arrastre. El código ha implementar es el siguiente:
+                </p></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><p class="subtitulo3"><b> Descripción breve acerca de las funciones: </b> <br><br>
+                <b> iniciar: </b> Agrega las escuchas "Listener" para los eventos necesarios en esta operación.Como también, del área de objetos, son tomanas las imagenes que se encuentren dentro, esto permite que sean cargadas dentro de un arreglo, permitiendo así que al momento que sea efectuado el arrastre de alguna de ellas, sea tomado su identificador de elemento (id).
+                <br><br>
+                <b> arrastrando: </b> Obtenemos el nombre de ID del elemento que está siendo arrastrado. Como también es calculada como coordenada x, y (0,0) la punta del cursor, ya que desde este punto será realizado el dibujado de la imagen dentro del lienzo (canvas).
+                <br><br>
+                <b> finalizado: </b>Dentro de esta función es validada que alguna de las 4 imagenes ya ha sido dibujado 8 veces en el lienzo, si es así será ocultada, para evitar que vuelva a ser dibujada dicha imagen.
+                <br><br>
+                <b> soltando: </b> Cuando un elemento es soltado dentro del elemento destino, el <b>Evento</b> drop es disparado y la función soltado() es llamada. Extraemos el valor de ID del elemento colocado dentro del área Destino, posteriormente, es calculada la coordenada x,y dentro del lienzo, teniendo como coordenada final la punta del puntero y de inicio la coordenada obtenida desde el punto 0,0 del lienzo hacia esta punta. Dependiendo del nombre de la imagen, es incrementada una variable, cuya función es el control de veces que ha sido dibujada dicha imagen. Con la función drawImage, es dibujada la imagen en nuestro lienzo, con las coordenadas previamente obtenidas.
+                <br><br>
+                <b> window.addEventListener('load', iniciar, false): </b> Es un componente que representa a la ventana, capturaria los eventos que ocurran en dicha ventana.
+                </p></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2" class="JS">
+                    <pre><code>                     // ***** Código en JavaScript *****
+
+                    var Img1=0, Img2=0, Img3=0, Img4=0;
+
+                    function iniciar(){
+                        var imagenes=document.querySelectorAll('#Objetos3 > img');
+                        for(var i=0; i&lt;imagenes.length; i++){
+                            imagenes[i].addEventListener('dragstart', arrastrado, false);
+                            imagenes[i].addEventListener('dragend', finalizado, false);
+                        }
+
+                        soltar=document.getElementById('lienzo');
+                        lienzo=soltar.getContext('2d'); 
+                        soltar.addEventListener('dragenter', function(e){ e.preventDefault(); }, false);
+                        soltar.addEventListener('dragover', function(e){ e.preventDefault(); }, false);
+                        soltar.addEventListener('drop', soltado, false); 
+                    }
+
+                    function finalizado(e){
+                        e.preventDefault();
+                        if(Img1 === 8){
+                            document.getElementById('imagen1').style.visibility='hidden';
+                        }
+
+                        if(Img2 === 8){
+                            document.getElementById('imagen2').style.visibility='hidden';
+                        }
+
+                        if(Img3 === 8){
+                            document.getElementById('imagen3').style.visibility='hidden';
+                        }
+
+                        if(Img4 === 8){
+                            document.getElementById('imagen4').style.visibility='hidden';
+                        }
+                    }
+
+                    function arrastrado(event){
+                        elemento=event.target;
+                        event.dataTransfer.setData('Text', elemento.getAttribute('id'));
+                        event.dataTransfer.setDragImage(event.target, 0, 0);
+                    }
+
+                    function soltado(e){
+                        e.preventDefault();
+                        var id=e.dataTransfer.getData('Text');
+                        var IMG=document.getElementById(id);
+                        var posx=(e.pageX-soltar.offsetLeft);
+                        var posy=(e.pageY-soltar.offsetTop);
+
+                        if(id === "imagen1"){ Img1++; lienzo.drawImage(IMG,posx,posy); }
+                        if(id === "imagen2"){ Img2++; lienzo.drawImage(IMG,posx,posy); }
+                        if(id === "imagen3"){ Img3++; lienzo.drawImage(IMG,posx,posy); }
+                        if(id === "imagen4"){ Img4++; lienzo.drawImage(IMG,posx,posy); }
+                    }
+
+                    window.addEventListener('load', iniciar, false);</code></pre></td>
+        </tr>
+        </table><br><hr><br>
+    </center></body>
+</html>

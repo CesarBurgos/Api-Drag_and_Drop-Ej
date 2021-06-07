@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Tutorial 4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../CSS/Tm6_Tut.css">
+        <link rel="stylesheet" href="../CSS/Tuts.css">
+        <script type="text/javascript" src="../JS/T6t4.js"></script>
+    </head>
+    <body><center><br>
+         <table>
+            <!-- ***** TUTORIAL_4 ***** -->
+            <tr><td class="center" colspan="2"><img src="../Imagenes/Tuto4.png" width="600" height="110"/></td></tr>            
+            <tr>
+                <td class="center" colspan="2">
+                    <p class="subtitulo4"><b> Breve Descripción: </b><br> La aplicación de esta API consiste en arrastrar dentro del ÁREA DESTINO archivos que cuente en su Dispositivo (No ha sido probado alojandolo dentro de un servidor), posteriormente es mostrado al usuario propiedades de dicho archivo.</p>
+                </td>
+            </tr>
+        </table>
+        
+        <table>
+            <tr>
+                <td colspan="1"><p class="subtitulo2 center"><b> Resultado a obtener en este tutorial: </b></p></td>
+                <td colspan="1"><center><button class="Boton Opciones" onclick="Reset()"> Reiniciar Tutorial 4 </button></center></td>
+            </tr>            
+            <tr>
+                <td colspan="2"><center>
+                    <section id="Destino4">
+                        <p class="TextTut1" id="text1"><br><br><b> Área Destino:</b><br> Arrastre aquí algún archivo de su computadora.</p>
+                    </section>
+                </center></td>
+            </tr>   
+        </table>
+        <br><b> Para saber cómo realizarlo, continua deslizando hacia abajo. </b><hr><br><br>
+        <table>
+            <tr>
+                <td colspan="2"><p class="subtitulo4"><b> -- Instrucciones --  </b></p></td>
+            </tr>
+            <tr>
+                <td colspan="2"><p class="subtitulo2">
+                    <b> Creación Área Destino: </b><br>Debemos crear el área en la cuale trabajaremos, en este caso solo es necesaria 1, el ÁREA DESTINO, su elaboración se llevaba a cabo con las líneas de códigos mostradas a continuación:
+                </p></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><p class="subtitulo3"><b> Área Destino: </b> Es el espacio o lugar en cuál será(n) colocado(s) nuestro(s) elemento(s) arrastrados. <br>* Con el uso adecuado el lenguaje etiquetado HTML5 creamos dicha área y junto con las hojas de estilos CSS es que damos un mejor diseños a nuestra área.</p></td>
+            </tr>      
+            
+            <tr>
+                <td class="HTML"><pre><code>        &lt;!-- ***** Código HTML5 (Estructura) ***** -->
+
+        &lt;section id="Destino4">
+            &lt;p class="TextTut1" id="text1">&lt;br>&lt;br>    
+            &lt;b> Área Destino:&lt;/b>&lt;br> Arrastre un archivo de su computadora.&lt;/p>
+        &lt;/section></code></pre></td>
+                
+            <td  class="CSS"><pre><code>    /* ***** Código CSS (Estilos) ***** */
+
+    #Destino4{
+        width: 1200px;
+        height: 280px;
+        border-color: #0007A5;
+        border-style: inset;
+        border-width: 11px;
+    }</code></pre></td>
+            </tr>
+            
+            <tr>
+            <td  class="CSS"><pre><code>    /* ** Código CSS (Estilo - Parrafo: Descripción (Texto)) ** */
+
+    .Arch{
+        font-family: Arial Nova Light;
+        font-size: 35px;
+        text-align: left;
+        margin: 2px;
+        color:#000000;
+    }</code></pre></td>
+    
+    <td  class="CSS"><pre><code>    /* ** Código CSS (Estilos - Div: Area de Descripción) ** */
+
+    #Info{
+        overflow-y:scroll;
+        overflow-x:hidden;
+        height: 280px;
+    }</code></pre></td>
+            </tr>
+            
+            
+            <tr>
+                <td colspan="2"><p class="subtitulo2">
+                    <b> Acciones: </b><br> Contando con nuestra área elaborada, corresponde el dar acción los <b>Eventos</b> que serán activados para llevar a cabo la aplicación de la API. Para ello, hacemos uso del lenguaje JavaScript, declarando FUNCIONES, podemos controlar los procesos que lleva el arrastre. El código ha implementar es el siguiente:
+                </p></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><p class="subtitulo3"><b> Descripción breve acerca de las funciones: </b> <br><br>
+                <b> iniciar: </b> Agrega las escuchas "Listener" para los eventos necesarios en esta operación.Como también, del área de objetos, son tomanas las imagenes que se encuentren dentro, esto permite que sean cargadas dentro de un arreglo, permitiendo así que al momento que sea efectuado el arrastre de alguna de ellas, sea tomado su identificador de elemento (id).
+                <br><br>
+                <b> soltando: </b> Cuando un elemento es soltado dentro del elemento destino, el <b>Evento</b> drop es disparado y la función soltado() es llamada. Extraemos el valor de ID del elemento colocado dentro del área Destino, posteriormente, es calculada la coordenada x,y dentro del lienzo, teniendo como coordenada final la punta del puntero y de inicio la coordenada obtenida desde el punto 0,0 del lienzo hacia esta punta. Dependiendo del nombre de la imagen, es incrementada una variable, cuya función es el control de veces que ha sido dibujada dicha imagen. Con la función drawImage, es dibujada la imagen en nuestro lienzo, con las coordenadas previamente obtenidas.
+                <br><br>
+                <b> window.addEventListener('load', iniciar, false): </b> Es un componente que representa a la ventana, capturaria los eventos que ocurran en dicha ventana.
+                </p></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2" class="JS">
+                    <pre><code>                     // ***** Código en JavaScript *****
+
+                function iniciar(){
+                    soltar=document.getElementById('Destino4');
+                    soltar.addEventListener('dragenter', function(e){ e.preventDefault(); }, false);
+                    soltar.addEventListener('dragover', function(e){ e.preventDefault(); }, false);
+                    soltar.addEventListener('drop', soltado, false); 
+                } 
+
+                function soltado(e){
+                    e.preventDefault();
+                    var archivos=e.dataTransfer.files;
+                    var lista='&lt;div id="Info">&lt;br>&lt;table>';
+                    for(var f=0;f&lt;archivos.length;f++){
+
+                        if(archivos[f].type === ""){
+                            lista+="&lt;tr>&lt;td>&lt;p class=\"Arch\" id=\"archivo\">";
+                            lista+="&lt;b> Nombre: &lt;/b>" + archivos[f].name";
+                            lista+="&lt;br>&lt;b> Tipo: &lt;/b> ¿? &lt;br>";
+                            lista+="&lt;b> Tamaño: &lt;/b>" + archivos[f].size + " bytes &lt;/p>";
+                            lista+="&lt;hr>&lt;/td>&lt;/tr>";   
+                        }else{
+                            lista+="&lt;tr>&lt;td>&lt;p class=\"Arch\" id=\"archivo\">";
+                            lista+="&lt;b> Nombre: &lt;/b>" + archivos[f].name";
+                            lista+="&lt;br>&lt;b> Tipo: &lt;/b>" + archivos[f].type + "&lt;br>";
+                            lista+="&lt;b> Tamaño: &lt;/b>" + archivos[f].size + " bytes &lt;/p>";
+                            lista+="&lt;hr>&lt;/td>&lt;/tr>"; 
+                        }
+                    }
+
+                    lista+='&lt;/table>&lt;/div>';
+                    soltar.innerHTML=lista;
+                }
+
+                window.addEventListener('load', iniciar, false);</code></pre></td>
+        </tr>
+        </table><br><hr><br>
+    </center></body>
+</html>

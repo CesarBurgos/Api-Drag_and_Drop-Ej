@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Tutorial 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../CSS/Tm6_Tut.css">
+        <link rel="stylesheet" href="../CSS/Tuts.css">
+        <script type="text/javascript" src="../JS/T6t2.js"></script>
+    </head>
+    <body><center><br>
+        <table>
+            <!-- ***** TUTORIAL_2 ***** -->
+            <tr>
+                <td class="center" colspan="2">
+                    <img src="../Imagenes/Tuto2.png" width="600" height="110"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="center" colspan="2">
+                    <p class="subtitulo4"><b> Breve Descripción: </b><br> Dentro de este ejemplo (tutorial), será implementada la RESTRICCIÓN DE UNA IMAGEN, es decir, se evaluará si dicha imágen que ha sido arrastrada a un ÁREA DESTINO, sea la que deseamos, si es así se mostrará dicha imagen, en caso contrario será mostrado un MENSAJE DE ERROR.</p>
+                </td>
+            </tr>
+        </table>
+        
+        <table>
+            <tr>
+                <td colspan="1">
+                    <p class="subtitulo2 center"><b> Resultado a obtener en este tutorial: </b></p>
+                </td>
+                <td colspan="1">
+                    <center><button class="Boton Opciones" onclick="Reset()"> Reiniciar Tutorial 2 </button></center>
+                </td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><center>
+                    <p class="subtitulo5"><b> Indique el número de la imagen que no admitira: </b>
+                        <input type="number" id="NImg" value="4"/>
+                        <button class="Boton Opciones" onclick="NoImg()"> Indicar </button>
+                        <label id="adver"><b> Se Descartará a la Imagen: 4 </b></label>
+                    </p><br>
+                </center></td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td colspan="1"><center>
+                    <section id="Objetos2">
+                        <p class="TextTut2" id="text2"> Haga Clic en su objeto y arrastrelo hacia su Destino: </p>
+                        <b> 1 </b><img id="imagen1" class="Opciones" src="../Imagenes/Fig1.png" width="150" height="140"/>
+                        <b> 2 </b><img id="imagen2" class="Opciones" src="../Imagenes/Fig2.png" width="150" height="140"/>
+                        <b> 3 </b><img id="imagen3" class="Opciones" src="../Imagenes/Fig3.png" width="150" height="140"/>
+                        <b> 4 </b><img id="imagen4" class="Opciones" src="../Imagenes/Fig4.png" width="130" height="140"/>
+                    </section>
+                </center></td>
+                
+                <td colspan="1"><center>
+                    <section id="Destino2">
+                        <p class="TextTut1" id="text1">
+                        <b>- Área Destino -</b><br><br>Verificación de IMAGENES admitidas</p>
+                    </section>
+                </center></td>
+            </tr>   
+        </table>
+        <br><b> Para saber cómo realizarlo, continua deslizando hacia abajo. </b><hr><br><br>
+        <table>
+            <tr>
+                <td colspan="2"><p class="subtitulo4"><b> -- Instrucciones --  </b></p></td>
+            </tr>
+            <tr>
+                <td colspan="2"><p class="subtitulo2">
+                    <b>1° Paso </b><br>Debemos crear las áreas con las cuales trabajaremos, en este caso son necesarias 2, el ÁREA DESTINO y el ÁREA DE OBJETOS, la elaboración de cada una de ellas se llevaba a cabo con las líneas de códigos mostradas a continuación:
+                </p></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><p class="subtitulo3"><b> Área Destino: </b> Es el espacio o lugar en cuál será(n) colocado(s) nuestro(s) elemento(s) arrastrados. <br>* Con el uso adecuado el lenguaje etiquetado HTML5 creamos dicha área y junto con las hojas de estilos CSS es que damos un mejor diseños a nuestra área.</p></td>
+            </tr>      
+            
+            <tr>
+                <td class="HTML"><pre><code>        &lt;!-- ***** Código HTML5 (Estructura) ***** -->
+
+        &lt;section id="Destino2">
+            &lt;p id="text1">&lt;b>- Área Destino -&lt;/b>&lt;/p>
+        &lt;/section></code></pre></td>
+                
+            <td  class="CSS"><pre><code>    /* ***** Código CSS (Estilos) ***** */
+
+    #Destino2{
+        justify-content: center;
+        width: 700px;
+        height: 240px;
+        margin: 10px;
+        background: rgba(157, 161, 255 ,.2);
+        border-color: #0007A5;
+        border-style: inset;
+        border-width: 11px;
+    }</code></pre></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><p class="subtitulo3"><b> Área De Objetos: </b> Apartado en el cual se encontrarán nuestro(s) elemento(s) que serán arrastrados (Este apartado PUEDE o NO Existir). <br>* Con el uso adecuado el lenguaje etiquetado HTML5 creamos dicha área y junto con las hojas de estilos CSS es que damos un mejor diseños a nuestra área.</p></td>
+            </tr>
+            
+            <tr>    
+                <td class="HTML">
+            <pre><code>&lt;!-- ***** Código HTML5 (Estructura) ***** -->
+&lt;section id="Objetos2">
+    &lt;p id="text2"> Haga Clic en su objeto y arrastrelo hacia su Destino: &lt;/p>
+    &lt;b> 1 &lt;/b>&lt;img id="imagen1" src="Dirección_1°_Imagen" width="150" height="140"/>
+    &lt;b> 2 &lt;/b>&lt;img id="imagen2" src="Dirección_2°_Imagen" width="150" height="140"/>
+    &lt;b> 3 &lt;/b>&lt;img id="imagen3" src="Dirección_3°_Imagen" width="150" height="140"/>
+    &lt;b> 4 &lt;/b>&lt;img id="imagen4" src="Dirección_4°_Imagen" width="130" height="140"/>
+&lt;/section></code></pre>
+                </td>
+            <td  class="CSS"><pre><code>     /* ***** Código CSS (Estilos) ***** */
+
+    #Objetos2{
+        justify-content: center;
+        width: 700px;
+        height: 240px;
+        margin: 10px;
+        background: rgba(255, 165, 61 ,.2);
+        border-color: #FFA53D;
+        border-style: inset;
+        border-width: 11px;
+    }</code></pre>
+                </td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><p class="subtitulo2">
+                    <b>2° Paso </b><br> Contando con nuestras áreas elaboradas, corresponde el dar acción los <b>Eventos</b> que serán activados para llevar a cabo la aplicación de la API. Para ello, hacemos uso del lenguaje JavaScript, declarando FUNCIONES, podemos controlar los procesos que lleva el arrastre. El código ha implementar es el siguiente:
+                </p></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><p class="subtitulo3"><b> Descripción breve acerca de las funciones: </b> <br><br>
+                <b> iniciar: </b> Agrega las escuchas "Listener" para los eventos necesarios en esta operación.Como también, del área de objetos, son tomanas las imagenes que se encuentren dentro, esto permite que sean cargadas dentro de un arreglo, permitiendo así que al momento que sea efectuado el arrastre de alguna de ellas, sea tomado su identificador de elemento (id).
+                <br><br>
+                <b> arrastrando: </b> Obtenemos el nombre de ID del elemento que está siendo arrastrado.
+                <br><br>
+                <b> soltando: </b> Cuando un elemento es soltado dentro del elemento destino, el <b>Evento</b> drop es disparado y la función soltado() es llamada. Extraemos el valor de ID del elemento colocado dentro del área Destino, posteriormente, es validada si dicha ID es permitida en la ejecución, es decir que tenga como nombre un ID valido, Si es así se Coloca un mensaje en el área de Destino, con las imagen arrastrada, indicando que dicha acción se realizo con exito, si no, es mostrado nuestro MENSAJE DE ERROR.
+                <br><br>
+                <b> window.addEventListener('load', iniciar, false): </b> Es un componente que representa a la ventana, capturaria los eventos que ocurran en dicha ventana.
+                </p></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2" class="JS">
+                    <pre><code>  // ***** Código en JavaScript *****
+
+var Imgn=4;
+function iniciar(){
+    var imagenes=document.querySelectorAll('#Objetos2 > img');
+    for(var i=0; i&lt;imagenes.length; i++){
+        imagenes[i].addEventListener('dragstart', arrastrado, false);   
+    } 
+    soltar=document.getElementById('Destino2');   
+    soltar.addEventListener('dragenter', function(e){ e.preventDefault(); }, false);
+    soltar.addEventListener('dragover', function(e){ e.preventDefault(); }, false);
+    soltar.addEventListener('drop', soltado, false); 
+} 
+
+function arrastrado(e){
+    elemento=e.target; 
+    e.dataTransfer.setData('Text', elemento.getAttribute('id')); 
+}
+
+function soltado(e){
+    e.preventDefault();
+    var id=e.dataTransfer.getData('Text');
+    if(id !== "imagen"+Imgn){
+        var src=document.getElementById(id).src;
+        if(id === "imagen4")
+            soltar.innerHTML='&lt;p class="TextTut1" id="text1">
+            &lt;b>- Imagen Admitida -&lt;/b>
+            &lt;/p>&lt;img src="'+src+'" width="130" height="140">';
+        else
+            soltar.innerHTML='&lt;p class="TextTut1" id="text1">
+            &lt;b>- Imagen Admitida -&lt;/b>
+            &lt;/p>&lt;img src="'+src+'" width="150" height="140">';
+    }else{ 
+        soltar.innerHTML='&lt;br>&lt;br>&lt;p class="TextTut1" id="text1">
+        &lt;b> Vaya... &lt;br>Esta Imagen No será Admitida :( &lt;/b>&lt;/p>';  
+    }
+}
+
+window.addEventListener('load', iniciar, false);</code></pre></td>
+        </tr>
+        </table><br><hr><br>
+    </center></body>
+</html>
